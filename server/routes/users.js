@@ -4,7 +4,7 @@ const router = express.Router();
 import { verifyToken } from "../config/verifyToken.js";
 
 import { update, deleteUser, getUser } from "../controllers/user.js";
-import { subscribe, unSubscribe, like, disLike } from "../controllers/user.js";
+import { subscribe, unSubscribe, like, dislike } from "../controllers/user.js";
 
 // Update user
 router.put("/:id", verifyToken, update);
@@ -25,6 +25,6 @@ router.put("/unsub/:id", verifyToken, unSubscribe);
 router.put("/like/:videoId", like);
 
 // Dislike a video
-router.put("/disLike/:videoId", disLike);
+router.put("/dislike/:videoId", dislike);
 
 export default router;

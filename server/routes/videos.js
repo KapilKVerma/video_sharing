@@ -3,14 +3,9 @@ const router = express.Router();
 
 import { verifyToken } from "../config/verifyToken.js";
 
-import {
-  addVideo,
-  updateVideo,
-  deleteVideo,
-  getByTag,
-  search,
-} from "../controllers/video.js";
+import { addVideo, updateVideo, deleteVideo } from "../controllers/video.js";
 import { getVideo, addView, trend, random, sub } from "../controllers/video.js";
+import { getByTag, search } from "../controllers/video.js";
 
 // Create Video
 router.post("/", verifyToken, addVideo);
